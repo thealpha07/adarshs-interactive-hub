@@ -9,55 +9,51 @@ interface ProfileImageProps {
 const ProfileImage = ({ activeSection }: ProfileImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Default image URL and section-specific images
-  const defaultImage = '/placeholder.svg';
+  // Default image URL and section-specific images - using business/tech themed silhouettes
+  const defaultImage = 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?auto=format&fit=crop&w=600&h=800&q=80'; // Standing person silhouette
   const sectionImages = {
-    blog: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&h=600&q=80',
-    resume: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=600&q=80',
-    shop: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=600&h=600&q=80',
-    community: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&h=600&q=80'
+    blog: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&h=800&q=80', // Person reading
+    resume: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&h=800&q=80', // Professional pose
+    shop: 'https://images.unsplash.com/photo-1512327536842-5aa37d1ba3e3?auto=format&fit=crop&w=600&h=800&q=80', // Person with shopping elements
+    community: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&w=600&h=800&q=80' // Person gesturing/talking
   };
 
   // Determine which image to show based on active section
   const currentImage = activeSection ? sectionImages[activeSection as keyof typeof sectionImages] : defaultImage;
   
-  // Section-specific color overlays
+  // Section-specific overlay colors
   const getSectionOverlayClass = () => {
     switch (activeSection) {
       case 'blog':
-        return 'bg-blog/10';
+        return 'from-blog/20';
       case 'resume':
-        return 'bg-resume/10';
+        return 'from-resume/20';
       case 'shop':
-        return 'bg-shop/10';
+        return 'from-shop/20';
       case 'community':
-        return 'bg-community/10';
+        return 'from-community/20';
       default:
-        return '';
+        return 'from-primary/20';
     }
   };
 
   return (
-    <div className="relative mx-auto mb-8 w-48 h-48 md:w-64 md:h-64">
+    <div className="relative mx-auto w-[300px] h-[400px] md:w-[400px] md:h-[600px]">
       <div 
         className={cn(
-          "absolute inset-0 rounded-full transition-all duration-300 animate-image-rotate",
-          getSectionOverlayClass()
+          "absolute inset-0 bg-gradient-to-r transition-all duration-300",
+          getSectionOverlayClass(),
+          "to-transparent"
         )}
       />
       <img 
         src={currentImage}
         alt="Adarsh Sadanand" 
         className={cn(
-          "w-full h-full object-cover rounded-full border-4 shadow-lg transition-opacity duration-500",
+          "w-full h-full object-cover transition-opacity duration-500",
           {
             "opacity-0": !isLoaded,
             "opacity-100": isLoaded,
-            "border-blog/50": activeSection === 'blog',
-            "border-resume/50": activeSection === 'resume',
-            "border-shop/50": activeSection === 'shop',
-            "border-community/50": activeSection === 'community',
-            "border-primary/30": !activeSection,
           }
         )}
         onLoad={() => setIsLoaded(true)}

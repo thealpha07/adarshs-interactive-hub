@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 222 47% 11%;
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96%;
@@ -31,7 +31,7 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 222 84% 5%;
+    --ring: 221 83% 53%;
 
     --radius: 0.75rem;
   }
@@ -46,7 +46,7 @@
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 217 91% 60%;
     --primary-foreground: 222 47% 11%;
 
     --secondary: 217 32% 17%;
@@ -63,7 +63,7 @@
 
     --border: 217 32% 17%;
     --input: 217 32% 17%;
-    --ring: 213 27% 84%;
+    --ring: 224 76% 48%;
   }
 }
 
@@ -78,19 +78,19 @@
 
   /* Section color transitions */
   .blog-bg {
-    @apply bg-gradient-to-r from-background to-blue-50 dark:from-background dark:to-blue-950/20;
+    @apply bg-gradient-to-r from-background to-blue-50/30 dark:from-background dark:to-blue-950/20;
   }
 
   .resume-bg {
-    @apply bg-gradient-to-r from-background to-green-50 dark:from-background dark:to-green-950/20;
+    @apply bg-gradient-to-r from-background to-green-50/30 dark:from-background dark:to-green-950/20;
   }
 
   .shop-bg {
-    @apply bg-gradient-to-r from-background to-orange-50 dark:from-background dark:to-orange-950/20;
+    @apply bg-gradient-to-r from-background to-orange-50/30 dark:from-background dark:to-orange-950/20;
   }
 
   .community-bg {
-    @apply bg-gradient-to-r from-background to-purple-50 dark:from-background dark:to-purple-950/20;
+    @apply bg-gradient-to-r from-background to-purple-50/30 dark:from-background dark:to-purple-950/20;
   }
 }
 

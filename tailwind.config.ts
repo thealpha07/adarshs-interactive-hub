@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				blog: {
+					DEFAULT: '#3b82f6',
+					hover: '#2563eb'
+				},
+				resume: {
+					DEFAULT: '#10b981',
+					hover: '#059669'
+				},
+				shop: {
+					DEFAULT: '#f97316',
+					hover: '#ea580c'
+				},
+				community: {
+					DEFAULT: '#8b5cf6',
+					hover: '#7c3aed'
 				}
 			},
 			borderRadius: {
@@ -84,11 +101,43 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					from: {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					from: {
+						opacity: '1'
+					},
+					to: {
+						opacity: '0'
+					}
+				},
+				'image-rotate': {
+					'0%': {
+						transform: 'rotate(0deg) scale(1)'
+					},
+					'50%': {
+						transform: 'rotate(5deg) scale(1.05)'
+					},
+					'100%': {
+						transform: 'rotate(0deg) scale(1)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'fade-out': 'fade-out 0.3s ease-out',
+				'image-rotate': 'image-rotate 5s ease-in-out infinite'
 			}
 		}
 	},
